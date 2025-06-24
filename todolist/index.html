@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="blur-circles">
+        <div class="circle pink"></div>
+        <div class="circle blue"></div>
+        <div class="circle purple"></div>
+    </div>
+    
+    <div class="container">
+        <h1><span class="neon-text"></span> TASKS PRO</h1>
+        
+        <div class="controls">
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="What's your mission?" required>
+                
+                <div class="form-options">
+                    <select id="task-category">
+                        <!-- emojis with thhe help of gpt -->
+                        <option value="work">💼 Work</option>
+                        <option value="personal">👨‍💻 Personal</option>
+                        <option value="health">🏥 Health</option>
+                        <option value="shopping">🛒 Shopping</option>
+                    </select>
+                    
+                    <input type="date" id="task-due">
+                    
+                    <select id="task-priority">
+                        <option value="low">🐢 Low</option>
+                        <option value="medium">🚶 Medium</option>
+                        <option value="high">🚨 High</option>
+                        <option value="urgent">🔥 Urgent</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="glow-button">
+                    <i class="fas fa-paper-plane"></i> Add Task
+                </button>
+            </form>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="work">Work</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="filter-btn" data-filter="health">Health</button>
+        </div>
+        
+        <ul id="task-list" class="task-list"></ul>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

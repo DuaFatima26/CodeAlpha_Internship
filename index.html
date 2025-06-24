@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Internship Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #0ff0fc;
+            --neon-pink: #ff2ced;
+            --neon-purple: #9d4dff;
+            --dark-bg: #0a0a1a;
+            --glass-bg: rgba(15, 15, 35, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--dark-bg);
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .blur-circles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+
+        .circle.pink {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-pink);
+            top: -50px;
+            left: -50px;
+        }
+
+        .circle.blue {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-blue);
+            bottom: -100px;
+            right: -100px;
+        }
+
+        .circle.purple {
+            width: 250px;
+            height: 250px;
+            background: var(--neon-purple);
+            top: 50%;
+            left: 30%;
+        }
+
+        .container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                        inset 0 0 15px rgba(255, 255, 255, 0.05);
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 50, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(157, 77, 255, 0.3);
+            border-color: var(--neon-purple);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .visit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(157, 77, 255, 0.5);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-circles">
+        <div class="circle pink"></div>
+        <div class="circle blue"></div>
+        <div class="circle purple"></div>
+    </div>
+    
+    <div class="container">
+        <h1>CodeAlpha Internship Projects</h1>
+        
+        <div class="intro">
+            <p>Welcome to my Web Development Internship portfolio at CodeAlpha. Here you'll find the projects I completed during my internship, showcasing my skills in front-end development.</p>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.location.href='todo.html'">
+                <div class="project-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="project-title">TASKS PRO</h3>
+                <p class="project-desc">
+                    A feature-rich to-do list application with task categorization, priority levels, due dates, and local storage persistence. Built with HTML, CSS, and JavaScript.
+                </p>
+                <a href="../CodeAlpha/Todolist/index.html" class="visit-btn">Open To-Do List</a>
+            </div>
+            
+            <div class="project-card" onclick="window.location.href='age-calculator.html'">
+                <div class="project-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3 class="project-title">Age Calculator</h3>
+                <p class="project-desc">
+                    A precise age calculator that calculates your exact age in years, months, and days based on your birthdate. Built with HTML, CSS, and JavaScript.
+                </p>
+                <a href="../CodeAlpha/AgeCalculator/index.html" class="visit-btn">Open Age Calculator</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Created during CodeAlpha Web Development Internship</p>
+        </footer>
+    </div>
+</body>
+</html>
